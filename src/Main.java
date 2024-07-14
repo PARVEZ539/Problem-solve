@@ -923,10 +923,90 @@ public class Main {
 
     }
 
+    public static boolean doubleLatter(String word){
+
+        for (int i = 0; i < word.length() - 1; i++) {
+            if (word.charAt(i) == word.charAt(i + 1)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void sumAll(int ...p){
+        int sum = 0;
+        for(int pa: p){
+            sum += pa;
+        }
+
+        System.out.println(sum);
+    }
+
+    public static void minMax(int [] arr){
+        Arrays.sort(arr);
+        int min = arr[0];
+        int max = arr[arr.length -1];
+        System.out.println(min + ", " + max);
+    }
+
+    public static void checkDivisibleByFive(int num){
+        int num1 = Math.abs(num);
+        if(num1 % 5 == 0){
+            System.out.println(true);
+        }else {
+            System.out.println(false);
+        }
+    }
+
+    public class Challenge {
+        public static String replaceVowels(String str, char ch) {
+            String str1 = "";
+
+            for (int i = 0; i < str.length(); i++) {
+                if (str.contains("i") || str.contains("a") || str.contains("e") || str.contains("o") || str.contains("u")) {
+                }
+            }
+            return str;
+
+        }
+    }
+
+
+
+    public static void allMinMaxValue(){
+        //byte max and min value
+        System.out.println("Byte max value: " + Byte.MAX_VALUE);
+        System.out.println("Byte min value: " + Byte.MIN_VALUE);
+
+        //short max and min value
+        System.out.println("Short max value: " + Short.MAX_VALUE);
+        System.out.println("Short min value: " + Short.MIN_VALUE);
+
+        //integer max and min value
+        System.out.println("Integer max value: " + Integer.MAX_VALUE);
+        System.out.println("Integer min value: " + Integer.MIN_VALUE);
+
+        //long max and min value
+        System.out.println("Long max value: " + Long.MAX_VALUE);
+        System.out.println("Long min value: " + Long.MIN_VALUE);
+
+        //float max and min value
+        System.out.println("Float max value: " + Float.MAX_VALUE);
+        System.out.println("Float min value: " + Float.MIN_VALUE);
+
+
+        //double max and min value
+        System.out.println("Double max value: " + Double.MAX_VALUE);
+        System.out.println("Double min value: " + Double.MIN_VALUE);
+
+
+
+
+    }
+
     public static void main(String[] args)  {
 
-       int[] num = {1,2,40,50,3,5};
-       sortNumber(num);
+        allMinMaxValue();
     }
 }
 
