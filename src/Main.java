@@ -998,15 +998,361 @@ public class Main {
         //double max and min value
         System.out.println("Double max value: " + Double.MAX_VALUE);
         System.out.println("Double min value: " + Double.MIN_VALUE);
+    }
+
+    //Valid variable name
+    public static void nameVariable(){
+        int $nam = 23;
+        int _nam = 25;
+        int nam15 = 30;
+        int nam$Nam = 40;
+        int sumAll = $nam+_nam+ nam15+nam$Nam;
+
+        System.out.println("All sum: " + sumAll);
+    }
 
 
 
+    //decimal to binary
+    public static void decimalToBinary(){
+        int nam1 = 5;
+        int nam2 = -5;
 
+        System.out.println("This is a decimal to binary number: "+Integer.toBinaryString(nam1));
+        System.out.println("This is a decimal to binary number: "+Integer.toBinaryString(nam2));
+    }
+
+    //Print all unicode
+    public static void uniCode(){
+        for (char c=0x0370; c<=0x03FF; c++){
+            System.out.print(c + " ");
+        }
+    }
+
+    //calculate the triangle of area
+    public static void calculateOfArea(){
+        float base, height, area;
+        System.out.println("Enter Base and Height: ");
+
+        Scanner sc = new Scanner(System.in);
+        base = sc.nextFloat();
+        height = sc.nextFloat();
+
+        area = base*height/2;
+
+        System.out.println("Area of a Triangle is " + area);
+    }
+
+
+    // 3 side of Triangle area calculate
+    public static void threeSideTriangleAreaCalculate(){
+        Scanner sc = new Scanner(System.in);
+
+        int a, b, c;
+        float s;
+       double area;
+        System.out.println("Enter 3 sides of Triangle ");
+        a = sc.nextInt();
+        b = sc.nextInt();
+        c = sc.nextInt();
+
+       s = (a + b + c)/2f;
+       area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+
+        System.out.println("Area is " + area);
+    }
+
+
+    // just sole the problem
+    //ax2+bx+c=0
+    public static void justSolveTheProblem(){
+        Scanner sc = new Scanner(System.in);
+        int a, b, c;
+        double r1, r2;
+
+        System.out.println("Enter value of a, b and c: ");
+        a = sc.nextInt();
+        b = sc.nextInt();
+        c = sc.nextInt();
+
+        r1 = (-b+ Math.sqrt(b*b-4*a*c))/(2*a);
+        r2 = (-b-Math.sqrt(b*b-4*a*c))/(2*a);
+
+        System.out.println("Root are " + r1 + " "+ r2);
+    }
+
+    //IncDec check
+    public static void incDec(){
+
+        //byte
+        byte nam1 = 4;
+        nam1++;
+        ++nam1;
+        System.out.println(nam1);
+
+        //short
+        short nam2 = 15;
+        nam2++;
+        ++nam2;
+        System.out.println(nam2);
+
+        //integer
+        int nam3 = 5;
+        nam3++;
+        ++nam3;
+        System.out.println(nam3);
+
+        //long
+        long nam4 = 100;
+        nam4++;
+        ++nam4;
+        System.out.println(nam4);
+
+        //float
+        float nam5 = 5.4f;
+        nam5++;
+        ++nam5;
+        System.out.println(nam5);
+
+        //double
+        double nam6 = 10.5;
+        nam6++;
+        ++nam6;
+        System.out.println(nam6);
+
+        //char
+        char ch = 'A';
+        ch++;
+        ++ch;
+        System.out.println(ch);
+    }
+
+    public static void BitwiseDemo(){
+
+        //decimal number
+        int x1 = 10, y1 = 6, z1;
+
+        //and operator
+        z1 = x1&y1;
+        System.out.println(z1);
+
+        //binary number
+        int x2 = 0b1010;
+        int y2 = 0b0110;
+        int z2, z3;
+
+        //or operator
+        z2 = x2|y2;
+
+        //xor operator
+        z3 = x2^y2;
+
+
+        int x3 = 0b1;
+        int y3;
+
+        //left shift
+        y3 = x3<<1;
+
+        int x4 = 0b1000;
+        int y4;
+
+        //right sift
+        y4 = x4>>1;
+
+        System.out.println("Left sift "+y3);
+        System.out.println("Right sift "+y4);
+        System.out.println(z2);
+        System.out.println(z3);
+    }
+
+
+    //printing
+    public static void printing(){
+        int x = 10, y = 20;
+        float b = 12.55f;
+        char c = 'A';
+        String str = "Hello";
+        String str1 = "Java Program";
+
+
+        System.out.println(x + y);
+        System.out.println("Number is " + y);
+        System.out.printf("Hello\n");
+        System.out.printf("Hello %s \n", str1);
+        System.out.printf("%1$d %2$f %1$d", x, b);
+
+        System.out.printf("\n%05d", x);
+    }
+
+    public static void StringPractice(){
+        String str1 = "Java Program";
+        String str2 = new String("JAVA");
+        char c[]= {'H', 'e','l','l','o'};
+        String str3 = new String(c);
+        byte b[] = {65, 66, 67, 68};
+        String str4 = new String(b);
+
+        System.out.println(str1);
+        System.out.println(str2);
+        System.out.println(str3);
+        System.out.println(str4);
+
+        String str5 = "Parvez Ahmed";
+        System.out.println(str5.startsWith("Parvez"));
+        System.out.println(str5.endsWith("Ahmed"));
+
+        String str6 = "Pyramid";
+        String str7 = "Pyramid";
+        System.out.println(str6.equals(str7));
+        System.out.println(str6.compareTo(str7));
+
+        String str8 = "A";
+        System.out.println(str8.matches("[a-zA-Z0-9]"));
+    }
+
+
+    public static void SCString(){
+        String str = "parvezahmez33@gmail.com";
+        int i = str.indexOf("@");
+        String uname = str.substring(0,i);
+        String domain = str.substring(i+1, str.length());
+
+        System.out.println("Username : " + uname);
+        System.out.println("Domain : " + domain);
+        System.out.println(domain.startsWith("gmail"));
+    }
+
+    public static void SCString1(){
+        String str = "programmer@gmail.com";
+
+        int i= str.indexOf("@");
+        String uname = str.substring(0,i);
+        System.out.println("Username : "+uname);
+        String domain = str.substring(i+1, str.length());
+        System.out.println("Domain : "+domain);
+
+        int j = domain.indexOf(".");
+        String name = domain.substring(0, j);
+        System.out.println(name.equals("gmail"));
+    }
+
+    public static void SCString2(){
+        String str = "a!B@c#1$2%3";
+        System.out.println(str.replaceAll("[^a-zA-Z0-9]",""));
+
+        String str1 = "       abc     def   gh   ijk   ";
+        str1 = str1.replaceAll("\\s+"," ").trim();
+        System.out.println(str1);
+        String words[] = str1.split("\\s");
+        System.out.println(words.length);
+    }
+
+
+
+    //Algebra Sequence — Boxes problem solve
+    public static int algebraSequence(int step){
+        if (step % 2 == 0) {
+            return step;
+        } else {
+            return step + 2;
+        }
+    }
+
+    //switch problem solve
+    public static void SwitchProblemSolve(){
+        int n = 1;
+        if(n==1){
+            System.out.println("One");
+        } else if (n==2) {
+            System.out.println("Two");
+        } else if (n==3) {
+            System.out.println("Three");
+        }else{
+            System.out.println("Not Valid");
+        }
+
+
+        int n1 = 3;
+
+        switch (n){
+            case 1:
+                System.out.println("One");
+                break;
+            case 2:
+                System.out.println("Two");
+                break;
+            case 3:
+                System.out.println("Three");
+                break;
+            default:
+                System.out.println("Invalid");
+        }
+    }
+
+
+    //one application
+    public static void switch1(){
+
+      Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Day Number");
+        int day=sc.nextInt();
+
+        switch (day){
+            case 1:
+                System.out.println("Mon");
+                break;
+            case 2:
+                System.out.println("Tue");
+                break;
+            case 3:
+                System.out.println("Wed");
+                break;
+            case 4:
+                System.out.println("Thur");
+                break;
+            case 5:
+                System.out.println("Fri");
+                break;
+            case 6:
+                System.out.println("Sat");
+                break;
+            case 7:
+                System.out.println("Sun");
+                break;
+            default:
+                System.out.println("Invalid");
+                break;
+        }
+    }
+
+    //problem2 solve switch
+
+    public static void switch2(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Domain name: ");
+        String domain = sc.nextLine();
+
+        String ext = domain.substring(domain.lastIndexOf(".")+ 1);
+        switch(ext){
+            case "com":
+                System.out.println("Commercial");
+                break;
+            case "org":
+                System.out.println("Organisation");
+                break;
+            case "gov":
+                System.out.println("Government");
+                break;
+            case "net":
+                System.out.println("Network");
+                break;
+
+        }
     }
 
     public static void main(String[] args)  {
-
-        allMinMaxValue();
+        switch2();
     }
 }
 
