@@ -1350,9 +1350,618 @@ public class Main {
 
         }
     }
+    public static void switch3(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Menu");
+        System.out.println("====");
+        System.out.println("ADD");
+        System.out.println("SUB");
+        System.out.println("MUL");
+        System.out.println("DIV");
+
+        System.out.println("Enter 2 numbers: ");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter Option in words ");
+        String option = sc.nextLine();
+        option=option.toUpperCase();
+        switch (option){
+            case "ADD":
+                System.out.println("Sum is " + (x +y));
+                break;
+            case "SUB":
+                System.out.println("Difference is " + (x -y));
+                break;
+            case "MUL":
+                System.out.println("Product is " + (x * y));
+                break;
+            case "DIV":
+                System.out.println("Ratio " + (x /y));
+                break;
+            default:
+                System.out.println("Invalid Option");
+                break;
+        }
+
+    }
+
+
+    //////////////////loops related///////////////////
+    public static void LoopPractice(){
+        int i = 1;
+        while (i<100){
+            System.out.println(i);
+            i=i*2;
+        }
+    }
+
+
+    public static void SCLoop1(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a Number: ");
+        int n= sc.nextInt();
+
+        for(int i = 1; i<= 10; i++){
+            System.out.println(n + "x" +i+"="+n*i);
+        }
+    }
+
+    public static void SCLoop2(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a Number");
+        int n = sc.nextInt();
+
+        int sum = 0;
+
+        for (int i=1;i<=n;i++){
+            sum=sum+i;
+        }
+        System.out.println("Sum of "+n+" Number is "+sum);
+    }
+
+    //factorial
+    public static void factorial(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a Number");
+        int n = sc.nextInt();
+
+        long fact = 1;
+        for (int i=1;i<=n; i++){
+            fact = fact*i;
+        }
+
+        System.out.println("Factorial is "+fact);
+
+    }
+
+    public static void SCLoop3(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a Number");
+        int n=sc.nextInt();
+
+        int r;
+        int count=0;
+
+        while (n>0){
+            r=n%10;
+            n=n/10;
+            count++;
+
+            System.out.println(r);
+        }
+        System.out.println("Total have number of count: "+count);
+    }
+
+
+    //Armstrong number
+    public static void armstrongNumber(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a Number");
+        int n= sc.nextInt();
+
+        int m=n;
+        int sum = 0;
+        int r;
+        while (n>0){
+            r=n%10;
+            n=n/10;
+
+            sum=sum+r*r*r;
+        }
+        if(sum==m){
+            System.out.println("Its a Armstrong Number");
+        }else{
+            System.out.println("Its not a Armstrong Number");
+        }
+    }
+
+    //reverse the number
+    public static void reverseTheNumber(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a Number: ");
+        int n= sc.nextInt();
+
+        int rev = 0,r;
+        while (n>0){
+            r=n%10;
+            rev= rev*10+r;
+            n/=10;
+        }
+        System.out.println("Reverse Number "+ rev);
+    }
+
+
+    public static void reverse1(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Number: ");
+        int n= sc.nextInt();
+        int r;
+        String str = "";
+        while (n>0){
+            r = n%10;
+            n=n/10;
+            str = str+r;
+        }
+        System.out.println(str);
+
+        char c;
+        for(int i=str.length()-1;i>=0;i--){
+            c=str.charAt(i);
+            switch (c){
+                case '0':
+                    System.out.print("Zero ");
+                    break;
+                case '1':
+                    System.out.print("One ");
+                    break;
+                case '2':
+                    System.out.print("Two ");
+                    break;
+                case '3':
+                    System.out.print("Three ");
+                    break;
+                case '4':
+                    System.out.print("Four ");
+                    break;
+                case '5':
+                    System.out.print("Five ");
+                    break;
+                case '6':
+                    System.out.print("Six ");
+                    break;
+                case '7':
+                    System.out.print("Seven ");
+                    break;
+                case '8':
+                    System.out.print("Eight ");
+                    break;
+                case '9':
+                    System.out.print("Nine ");
+                    break;
+            }
+        }
+    }
+
+    //solve problem
+    public static void SCLoop4(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Program to print AP Series");
+        System.out.println("Enter a, d and n");
+        int a = sc.nextInt();
+        int d = sc.nextInt();
+        int n = sc.nextInt();
+
+        int term = a;
+        for(int i=0; i<n; i++){
+            System.out.println(term+ " ");
+            term=term+d;
+        }
+    }
+
+    public static void fibonacciSeries(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Program to Fibonacci Series");
+        System.out.println("Enter number of Terms");
+        int n= sc.nextInt();
+
+        int a=0,b=1,c;
+
+        System.out.print(a+","+b);
+        for(int i=0;i<n-2;i++){
+            c=a+b;
+            System.out.print(c+",");
+            a=b;
+            b=c;
+        }
+    }
+
+    //nested loops
+    public static void nestedLoops(){
+        for(int i=1;i<=5;i++){
+            for(int j=1;j<=5;j++){
+                System.out.print("("+i+","+j+") ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void patterns1(){
+        int count = 0;
+        for(int i=1; i<=5; i++){
+            for (int j=1;j<=5;j++){
+                count++;
+                System.out.format("%02d ",count);
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void pattern2(){
+        for(int i=1;i<=5;i++){
+            for (int j=1;j<=i;j++){
+                System.out.print(j+ " ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void pattern3(){
+
+        int count = 0;
+        for(int i=1;i<=5;i++){
+            for (int j=1;j<=i;j++){
+                count++;
+                System.out.print(count+ " ");
+            }
+            System.out.println("");
+        }
+    }
+
+
+    //////////////Array section///////////////////
+    public static void arrayPractice(){
+        int A[] = new int[10];
+        int B[] ={1,2,3,4,5};
+        int C[];
+        C=new int[10];
+
+        B[2]=15;
+
+        for (int i=0; i<B.length;i++){
+            System.out.println(B[i]);
+        }
+
+        for(int s:B){
+            System.out.println(s);
+        }
+    }
+
+
+    //solve problem of array1
+    public static void SCArray1(){
+        int A[] = {3,9,7,8,12,6,15,5,4,10};
+
+        int sum = 0;
+
+        for(int i=0;i<A.length;i++){
+            sum = sum+A[i];
+        }
+        System.out.println("Sum is "+ sum);
+    }
+
+    //solve problem of array2
+    public static void SCArray2(){
+        Scanner sc = new Scanner(System.in);
+        int A[] = {3,9,7,8,12,6,15,5,4,10};
+        System.out.println("Enter a Key ");
+        int key = sc.nextInt();
+
+        for(int i=0;i<A.length;i++){
+            if(key==A[i]){
+                System.out.println("Element Found at: "+i);
+                System.exit(0);
+            }
+        }
+        System.out.println("Not Found");
+    }
+
+    //solve problem of array3
+    public static   void SCArray3(){
+        int A[] = {3,9,7,8,12,6,15,5,4,10};
+        int max1, max2;
+
+        max1=max2=A[0];
+        for(int i=0;i<A.length;i++){
+
+            if(A[i]>max1){
+                max2 = max1;
+                max1 = A[i];
+            } else if (A[i]>max2) {
+                max2=A[i];
+            }
+        }
+        System.out.println("Second Largest is "+ max2);
+    }
+
+
+    public static void arrayPractice1(){
+        int A[][] = new int[5][5];
+        int B[][] = {{1,2,3},{2,4,6},{1,3,5}};
+
+        //one way
+       for(int i=0;i<B.length;i++){
+           for (int j=0;j<B[0].length; j++){
+               System.out.print(B[i][j]+" ");
+           }
+           System.out.println("");
+       }
+        System.out.println("");
+       //two_way
+        for(int x[]:B){
+            for(int y:x){
+                System.out.print(y+ " ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void arrayPractice2(){
+        int A[][];
+        A=new int[3][];
+
+        A[0]=new int[5];
+        A[1]=new int[3];
+        A[2]=new int[8];
+
+        for(int x[]:A){
+            for (int y:x){
+                System.out.print(y+" ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void arrayPractice3(){
+        int A[][] = {{3,5,9},{7,6,2},{4,3,5}};
+        int B[][] = {{1,5,2},{6,8,4},{3,9,7}};
+
+        int C[][]= new int[3][3];
+
+        for(int i=0;i<A.length;i++){
+            for (int j=0;j<A[0].length;j++){
+                C[i][j] = A[i][j] + B[i][j];
+            }
+        }
+        for(int x[]:C){
+            for (int y:x){
+                System.out.print(y+" ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void arrayPractice4(){
+        int A[][]={{3,5,9},{7,6,2},{4,3,5}};
+        int B[][]={{1,0,0},{0,1,0},{0,0,1}};
+
+        int C[][]=new int[3][3];
+
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                C[i][j]=0;
+                for(int k=0;k<3;k++){
+                    C[i][j] = C[i][j] + A[i][k]*B[k][j];
+                }
+            }
+        }
+        for(int x[]: C){
+            for(int y:x){
+                System.out.print(y+" ");
+            }
+            System.out.println("");
+        }
+    }
+
+
+
+    //some problem solve
+    public static void someProblemSolve(){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How old are you?");
+
+        int age = sc.nextInt();
+        System.out.println("I am "+ age + " years old.");
+        sc.nextLine();
+        System.out.println("Do you want to marrige this year? 'YES'-Y, 'NO'-N");
+        String st = sc.nextLine();
+        st.toUpperCase();
+
+        if(st.equals("Y")){
+            if(age>=20){
+                System.out.println("You can marry. Congratulations. I wish your best life.");
+                System.out.println("How much money do you use in your marrige for buy cloths?");
+                int money = sc.nextInt();
+
+                if(money>= 50000){
+                    System.out.println("Oh! That's big amount. Maybe you have lots of money.");
+                } else if (money>=30000) {
+                    System.out.println("You are middle class. That is enough for buy cloths.");
+                }else {
+                    System.out.println("You are so tight. Ha ha ha.");
+                }
+            }else {
+                System.out.println("You can't marry. Because you know what you're not perfect for marrige. Please attend your study.");
+            }
+        }else if(st.equals("N")){
+            if(age>=20){
+                System.out.println("You should marry. Because you're age is over to marrige. Don't lose the important time. ");
+            }else {
+                System.out.println("You're already not perfect to marrige. Thank you select NO.");
+            }
+        }else {
+            System.out.println("This is invalid.");
+        }
+    }
+
+    public static void idobashiCustomar(){
+        //make question
+        Scanner sc = new Scanner(System.in);
+
+        //check what sim card use customar right now
+        System.out.println("Irassaimase");
+        System.out.println("What kind of sim card you're you use right now? If you use 'Y!Mobile or SoftBank' Please enter S, use 'Rakuten'- R,'Docomo ahamo irumo'- D and 'Au or Uq'- K");
+        String st1 =sc.nextLine().toUpperCase();
+        switch (st1){
+            case "S":
+                System.out.println("What you're use? Y!mobile - Y or SoftBank - S ?");
+                String st2 = sc.nextLine().toUpperCase();
+                sc.nextLine();
+                if(st2.equals("Y")){
+                    System.out.println("You're using Y!mobile. How's Y!mobile? Is it network and call is good? Yes- Y, No- N");
+                    String st3 = sc.nextLine().toUpperCase();
+                    if(st3.equals("Y")){
+                        System.out.println("That's good. You should use continue Y!mobile. Maybe it's better for you.");
+                    }else {
+                        System.out.println("You should to change another company. What about Uq mobile Sim. If you change to day I give 20,000pt of idobashi point.");
+                    }
+                }else {
+                    System.out.println("You're using SoftBank. How's SoftBank? Is it network and call is good? Yes- Y, No- N");
+                    String st3 = sc.nextLine().toUpperCase();
+                    if(st3.equals("Y")){
+                        System.out.println("That's good. You should use continue SoftBank. Maybe it's better for you.");
+                    }else {
+                        System.out.println("You should to change this sim card to another company. What about Uq mobile Sim. If you change to day I give 20,000pt of idobashi point.");
+                    }
+                }
+                break;
+            case "R":
+                System.out.println("How's Rakuten? Is network and call is good? Yes- Y and No- N");
+                String st4=sc.nextLine().toUpperCase();
+                if(st4.equals("Y")){
+                    System.out.println("You should use continue this Rakuten sim.");
+                }else {
+                    System.out.println("You should to change this sim card to another company. What about Uq mobile Sim. If you change to day I give 20,000pt of idobashi point.");
+                }
+                break;
+            case "D":
+                System.out.println("How's internet and call Docomo, ahamo and irumo? Is it good-> G and bed->B");
+                String st5=sc.nextLine().toUpperCase();
+                if(st5.equals("G")){
+                    System.out.println("You should use continue this sim card");
+                }else {
+                    System.out.println("You should to change this sim card to another company. What about Uq mobile Sim. If you change to day I give 20,000pt of idobashi point.");
+                }
+                break;
+            case "K":
+                System.out.println("You should use continue. This is a best sim and network in the Japan.");
+                break;
+            default:
+                System.out.println("Something was wrong.");
+
+        }
+
+    }
+
+    public static void arrayP1(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many friends name do you want to take?");
+        int nam = sc.nextInt();
+
+        System.out.println("Enter your friends name: ");
+        ArrayList<String> ary = new ArrayList<>();
+        for(int i=1; i<=nam;i++){
+            String str = sc.nextLine();
+            ary.add(str);
+        }
+        System.out.println("This is your friends name. Right?");
+
+        for(String str: ary){
+            System.out.println(str);
+        }
+        String answer = sc.nextLine().toUpperCase();
+
+        if(answer.equals("YES")){
+            System.out.println("Okey. Thank you so much.");
+        }else {
+            System.out.println("Somethings else.");
+        }
+    }
+
+    public static void array2(){
+        String arr[]={"java","python","pascal","smalltalk", "ada","basic"};
+        java.util.Arrays.sort(arr);
+
+        for(String x:arr){
+            System.out.println(x);
+        }
+    }
+
+    //check prime number or not
+    public static boolean isPrime(int n){
+        for(int i=2;i<n/2;i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+}
+
+
+//check gdc
+    public static int gdc(int m, int n){
+        while (m!=n){
+            if(m>n)m=m-n;
+            else n=n-m;
+        }
+        return m;
+    }
+
+
+    //max number check
+    public static int max(int x, int y, int z){
+
+        if(x>y && x>z){
+            return x;
+        } else if (y>z) {
+            return y;
+        }else {
+            return z;
+        }
+    }
+
+    //max number check manuel a lots of number
+    public static int Max(int ...x){
+        if(x.length==0)return Integer.MIN_VALUE;
+        int max =x[0];
+
+        for(int i = 0; i<x.length;i++){
+
+            if(x[i]>max){
+                max = x[i];
+            }
+        }
+        return max;
+    }
+
+    public static void showList(String ...S){
+        for (int i = 0; i<S.length;i++){
+            System.out.println(i+1+". "+S[i]);
+        }
+    }
 
     public static void main(String[] args)  {
-        switch2();
+        System.out.println(Max());
     }
 }
 
