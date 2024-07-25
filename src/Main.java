@@ -1960,11 +1960,200 @@ public class Main {
         }
     }
 
+    //recursion
+    public static void fun(int n){
+        if(n>0){
+            fun(n-1);
+            System.out.println(n);
+        }
+
+    }
+
+    //////////////////////////Main Method///////////////////////////
     public static void main(String[] args)  {
-        System.out.println(Max());
+        LifeRoll();
+    }
+
+    //beautifull girl
+
+    public static void beautifullGirls(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Hey, Sweetie. How are you?");
+        String ask = sc.nextLine();
+        System.out.println("I am " + ask);
+        System.out.println("Are you looking something?");
+        String looking = sc.nextLine().toLowerCase();
+
+        if(looking.equals("no")){
+            System.out.println("Ok. Nice to meet you.");
+        }else if(looking.equals("i am looking camera")){
+            System.out.println("Ok. Camera is three flor. Do you have Passport today? If you have Passport you can buy any thing tax free.");
+            String pass = sc.nextLine().toLowerCase();
+            if(pass.equals("yes")){
+                System.out.println("If you buy anything above 5,500¥. You can get tax free.");
+            }else {
+                System.out.println("Ok. You can't buy tax free.");
+            }
+        } else if (looking.equals("i am looking toys")) {
+            System.out.println("You should go to six flor. And also you should use elevator");
+        }else {
+            System.out.println("Ok. Thank you.");
+        }
+    }
+
+    ///Sort Numbers in Ascending Order
+    public static void sortNumberAscending(int[]nums){
+        if(nums==null){
+            System.out.println(new int[0]);
+        }
+        Arrays.sort(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
+
+    //life rolls
+    public static void LifeRoll(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("What are you doing this time?");
+        int time = sc.nextInt();
+        System.out.println("If you want to quit. Please press 1");
+
+        switch (time){
+            case 10:
+                System.out.println("I am going to my Job.");
+                break;
+            case 11:
+                System.out.println("I am study in MacDonal before enter my Job.");
+                break;
+            case 13:
+                System.out.println("I join in Job meeting.");
+                break;
+            case 17:
+                System.out.println("Right now I am taking break");
+                break;
+            case 22:
+                System.out.println("I am get out from Job and go to home.");
+                break;
+            default:
+                System.out.println("Do you have any question.");
+        }
+        }
+
+    }
+    ///Get Sum of People's Budget///
+    static class Person{
+        String name;
+        int age;
+        int budget;
+        public Person(String name, int age, int budget){
+            this.name = name;
+            this.age = age;
+            this.budget = budget;
+        }
+    }
+
+    //budget calculator
+    static class budgetCalculator{
+       public  static int getBudgets(List<Person> people){
+            int totalBudget =0;
+            for(Person person:people){
+                totalBudget+=person.budget;
+            }
+            return totalBudget;
+        }
+    }
+
+
+
+    ///solve problem////
+    public static int solutions(double a, double b, double c){
+        double discriminant = b*b - 4*a*c;
+
+        if(discriminant > 0){
+            return 2;
+        } else if (discriminant==0) {
+            return 1;
+        }else {
+            return 0;
+        }
+    }
+
+///////get personal information////////////
+    public static void myPersonal(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Hey, What is your name? ");
+        String name = sc.nextLine();
+        System.out.println("Hello "+ name+ ". How are you?");
+        String sitution = sc.nextLine();
+        System.out.println("Oh, You're " + sitution);
+
+        if(sitution.equals("fine") || sitution.equals("good")){
+            System.out.println("Enjoy your day.");
+        }else {
+            System.out.println("I pray for you. One day will be good day. Don't worry.");
+        }
+
+        System.out.println("Are you working here in Japan?");
+        String job = sc.nextLine().toLowerCase();
+
+        if(job.equals("yes")){
+            System.out.println("Where are you work? Are you software engineer or other's?");
+            String engineer=sc.nextLine();
+            if(engineer.equals("engineer")){
+                System.out.println("Wow. You're genius person.");
+            }else {
+                System.out.println("That's good.");
+            }
+        }else {
+            System.out.println("You're travel. Enjoy your travel.");
+        }
+    }
+
+/////Rectangle/////
+    class Rectangle{
+        private double length;
+        private double breath;
+        public Rectangle(){
+            length = 1;
+            breath =1;
+        }
+
+        public Rectangle(double l, double b){
+            length = l;
+            breath = b;
+        }
+        public Rectangle(double s){
+            length = breath=s;
+        }
+    }
+
+
+
+//////Student Information////////
+class Student{
+    public int roll;
+    public String name;
+    public String course;
+    public int m1,m2,m3;
+
+    public int total(){
+        return m1+m2+m3;
+    }
+    public float average(){
+        return total()/3;
+    }
+    public char grade(){
+        if(average()>=60){
+            return 'A';
+        }else {
+            return 'B';
+        }
+    }
+    public String toString(){
+        return "Roll No:"+roll+"\n"+"Name: "+name+"\n"+"Course: "+course+"\n";
     }
 }
-
 
 //OOP
 
@@ -1993,3 +2182,61 @@ class Teacher{
         System.out.println("Phone : " + phone);
     }
 }
+
+
+//////Circle///////////
+class Circle{
+    public double radius;
+    public double area(){
+        return Math.PI*radius*radius;
+    }
+    public double perimeter(){
+        return 2*Math.PI*radius;
+    }
+    public double circumference(){
+        return perimeter();
+    }
+}
+
+///////////Rectangle///////////////
+class eRectangle{
+
+    public double length;
+    public double breath;
+    public double area(){
+        return length*breath;
+    }
+
+    public double perimeter(){
+        return 2*(length+breath);
+    }
+    public boolean isSquare(){
+        if(length==breath)
+            return true;
+        else
+            return  false;
+    }
+}
+
+////cylinder test////
+class Cylinder{
+    public double radius;
+    public double height;
+
+    public double lidArea(){
+        return Math.PI*radius*radius;
+    }
+    public double totalSurfaceArea(){
+        return 2*lidArea()+circumference()*height;
+    }
+    public double circumference(){
+        return 2*Math.PI*radius;
+    }
+    public double volume(){
+        return lidArea()*height;
+    }
+}
+
+public void main() {
+}
+
