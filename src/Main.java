@@ -4,7 +4,52 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-public class Main {
+//////////student subject//////////////
+static class Subject{
+    private String subID;
+    private String name;
+    private int maxMarks;
+    private int marksObtain;
+
+    public Subject(String subID,String name, int maxMarks){
+        this.subID = subID;
+        this.name = name;
+        this.maxMarks = maxMarks;
+    }
+    public String getSubID(){
+        return subID;
+    }
+    public String getName(){return name;}
+    public int getMaxMarks(){return maxMarks;}
+    public int getMarksObtain(){return marksObtain;}
+    public void setMaxMarks(int mm){
+        maxMarks = mm;
+    }
+    public void setMarksObtain(int m){
+        marksObtain=m;
+    }
+    boolean isQualified(){
+        return marksObtain>=maxMarks/10*4;
+    }
+    public String toString(){
+        return "\nSubject ID:"+subID+"\nName :"+name+"\nMarks Obtained: "+marksObtain;
+    }
+
+}
+public class MAIN {
+
+    ////////////////main method/////////////////////
+    public static void main(String[] args)  {
+        Subject s[] = new Subject[3];
+        s[0] = new Subject("s101","DS",100);
+        s[1] = new Subject("s102","Algorithms",100);
+        s[2] = new Subject("s103","Operating System",100);
+
+        for(Subject x: s){
+            System.out.println(x);
+        }
+    }
+
 
     // problem solve 1
     public static void Assignment17(){
@@ -1970,9 +2015,7 @@ public class Main {
     }
 
     //////////////////////////Main Method///////////////////////////
-    public static void main(String[] args)  {
-        LifeRoll();
-    }
+
 
     //beautifull girl
 
